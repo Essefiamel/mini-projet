@@ -321,15 +321,22 @@
             });
 			
 			$("#div_resume").click(function () {
+				
 				var nb = $("#nbp").val();
 				var nom =$("#nom").val();
 				var prenom=$("#prenom").val();
 				var date=$("#date").val();
 				var civil=$("#civilite").val();
 				var y = $("input[name='cmd']:checked").val();
-				alert("Bonjour "+civil+" "+prenom+" "+nom+"\n Votre commande du "+date+" à bien ete validé ");
-			
+				$('#div_resume').append(`
+				<ul>
+				${platsNames.map(elem => "<li>" + elem + "</li>").join('')}
+            </ul>
+                        <br>
+            Le montant total de votre commande est de <span style="color: #f42f2c;font-weight: bold">${sum}</span> dinars
+        `);
 			});
+	
 		</script>
 
 	</body>
